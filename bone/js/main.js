@@ -31,8 +31,7 @@ function handleWindowResize() {
 function createOrbit() {
     control = new THREE.OrbitControls(camera, renderer.domElement);
     control.object.position.set(0, 0, 15);  // 設定control camera原點
-    console.log(control.object.position);
-    control.target.set(0, 5, 0);  // 設定control camera 目標點
+    control.target.set(0, 0, 0);  // 設定control camera 目標點
     control.update();
 }
 
@@ -62,7 +61,7 @@ function createLight() {
     scene.add(ambientLight);
 
     var spotLight = new THREE.SpotLight(0xffffff, 1);
-    spotLight.position.set(-100, 100, 0);
+    spotLight.position.set(-100, 100, 50);
     //spotLight.castShadow = true;
 
     //spotLight.shadow.mapSize.width = 1024;
@@ -75,12 +74,26 @@ function createLight() {
 
 }
 
+var set = [];
+var helpset ;
+var scaleVal = 3;
+
 function createModels() {
-    var geometry = new THREE.SphereGeometry(5, 10, 10);
-    var material = new THREE.MeshPhongMaterial({color: 0xffffff});    //可以比較這兩種材質的差異
-    //var material = new THREE.MeshLambertMaterial({color: 0xffffff});  //LamberMaterial應該是逐頂點著色, PhongMaterial是逐片元著色，所以PhongMaterial較吃資源。
-    var mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+   var jsonLoader = new THREE.JSONLoader();
+    jsonLoader.load('model/box.json', addModel);
+    function addModel(geometry, material) {
+        material.skinning = true;
+        var mtl = new THREE.MeshFaceMaterial(material);
+        var mesh = new THREE.SkinnedMesh(geometry, mtl);
+        console.log(mesh.skeleton.bones[0].rotation.y);
+        mesh.skeleton.bones[0].rotation.y = Math.PI/4;
+        console.log(mesh.skeleton.bones[0].rotation.y);
+
+        scene.add(mesh);
+        helpset = new THREE.SkeletonHelper(mesh);
+        scene.add(helpset);
+
+    }
 
 }
 
