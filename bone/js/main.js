@@ -74,24 +74,28 @@ function createLight() {
 
 }
 
-var set = [];
+
 var helpset ;
-var scaleVal = 3;
+
 
 function createModels() {
    var jsonLoader = new THREE.JSONLoader();
-    jsonLoader.load('model/box.json', addModel);
+    jsonLoader.load('model/bone.json', addModel);
     function addModel(geometry, material) {
-        material.skinning = true;
-        var mtl = new THREE.MeshFaceMaterial(material);
+        var mtl = new THREE.MeshFaceMaterial (material);
         var mesh = new THREE.SkinnedMesh(geometry, mtl);
-        console.log(mesh.skeleton.bones[0].rotation.y);
-        mesh.skeleton.bones[0].rotation.y = Math.PI/4;
-        console.log(mesh.skeleton.bones[0].rotation.y);
+        mesh.material.materials.forEach(function(m){    //
+            m.skinning = true;                           // TMD 超級重要!!!!!!!!!!!!!!!!!!
+        });                                              //
+
 
         scene.add(mesh);
         helpset = new THREE.SkeletonHelper(mesh);
+        helpset.update();
+
         scene.add(helpset);
+
+
 
     }
 
@@ -100,5 +104,17 @@ function createModels() {
 function loop() {
     renderer.render(scene, camera);
     requestAnimationFrame(loop);
+
+    scene.traverse(function (child) {
+        if(child instanceof THREE.SkinnedMesh){
+            //child.rotation.y += 0.1;
+            child.skeleton.bones[2].rotation.y += 0.01;
+
+
+        }else if (child instanceof THREE.SkeletonHelper){
+            child.update();
+        }
+
+    });
 
 }
