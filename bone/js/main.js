@@ -80,10 +80,11 @@ var helpset ;
 
 function createModels() {
    var jsonLoader = new THREE.JSONLoader();
-    jsonLoader.load('model/bone.json', addModel);
+    jsonLoader.load('model/arm.json', addModel);
     function addModel(geometry, material) {
         var mtl = new THREE.MeshFaceMaterial (material);
         var mesh = new THREE.SkinnedMesh(geometry, mtl);
+        mesh.skeleton.bones[1].rotation.z = 1;
         mesh.material.materials.forEach(function(m){    //
             m.skinning = true;                           // TMD 超級重要!!!!!!!!!!!!!!!!!!
         });                                              //
@@ -108,7 +109,8 @@ function loop() {
     scene.traverse(function (child) {
         if(child instanceof THREE.SkinnedMesh){
             //child.rotation.y += 0.1;
-            child.skeleton.bones[2].rotation.y += 0.01;
+            child.skeleton.bones[2].rotation.y += 0.05;
+            child.skeleton.bones[1].rotation.y += 0.01;
 
 
         }else if (child instanceof THREE.SkeletonHelper){
