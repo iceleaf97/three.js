@@ -35,7 +35,6 @@ function createGUI() {
         base:0,
         upperArm:0.1,
         wrist:0
-
     };
     gui.add(params, 'clip', -0.4,1.5);
     gui.add(params, 'base', -3,3);
@@ -250,8 +249,6 @@ function loop() {
             params.clip *= -1;
             child.skeleton.bones[5].rotation.y = params.clip;
             params.clip *= -1;
-
-
 
         }
       //  else if (child instanceof THREE.SkeletonHelper){

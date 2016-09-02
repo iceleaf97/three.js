@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20d511c-37e0-44c3-ac35-279f71b33288" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RobotArm/index_Arm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RobotArm/js/arm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bone/.idea/workspace.xml" afterPath="$PROJECT_DIR$/bone/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bone/js/main.js" afterPath="$PROJECT_DIR$/bone/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RobotArm/js/arm.js" afterPath="$PROJECT_DIR$/RobotArm/js/arm.js" />
     </list>
     <ignored path="three.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,21 +38,11 @@
       <file leaf-file-name="arm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobotArm/js/arm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state relative-caret-position="684">
+              <caret line="253" column="58" selection-start-line="253" selection-start-column="58" selection-end-line="253" selection-end-column="58" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scene.js" pinned="false" current-in-tab="false">
-        <entry file="file://G:/MyProject/MyWebsite _20160827/public/js/scene.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="56" column="45" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="45" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -235,12 +221,12 @@
       <workItem from="1472477238065" duration="10782000" />
       <workItem from="1472636885509" duration="4414000" />
       <workItem from="1472650950756" duration="2753000" />
-      <workItem from="1472831464954" duration="12369000" />
+      <workItem from="1472831464954" duration="13134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32539000" />
+    <option name="totallyTimeSpent" value="33304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="976" y="0" width="951" height="1047" extended-state="0" />
@@ -453,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RobotArm/js/arm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="684">
+          <caret line="253" column="58" selection-start-line="253" selection-start-column="58" selection-end-line="253" selection-end-column="58" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
