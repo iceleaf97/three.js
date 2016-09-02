@@ -57,7 +57,7 @@ function createScene() {
 }
 
 function createLight() {
-    var ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+    var ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
     var spotLight = new THREE.SpotLight(0xffffff, 1);
@@ -70,7 +70,7 @@ function createLight() {
     //spotLight.shadow.camera.far = 4000;
     //spotLight.shadow.camera.fov = 30;
 
-    scene.add(spotLight);
+    //scene.add(spotLight);
 
 }
 
@@ -80,7 +80,7 @@ var helpset ;
 
 function createModels() {
    var jsonLoader = new THREE.JSONLoader();
-    jsonLoader.load('model/arm.json', addModel);
+    jsonLoader.load('model/arm2.json', addModel);
     function addModel(geometry, material) {
         var mtl = new THREE.MeshFaceMaterial (material);
         var mesh = new THREE.SkinnedMesh(geometry, mtl);
@@ -96,6 +96,12 @@ function createModels() {
 
         scene.add(helpset);
 
+        var ball = new THREE.Mesh(new THREE.SphereGeometry(1, 5, 5), new THREE.MeshBasicMaterial({color:0xfff000}));
+
+        scene.add(ball);
+
+        mesh.skeleton.bones[1].add(ball);
+        ball.position.set(0,2,3);
 
 
     }
