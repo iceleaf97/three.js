@@ -9,6 +9,7 @@ var WIDTH, HEIGHT;
 var helpset ;
 var boneMesh;
 var gui, params;
+var processValue = 10;
 
 
 
@@ -16,6 +17,9 @@ var gui, params;
 window.addEventListener('load', init, false);
 
 function init(){
+    $( "#progressbar" ).progressbar({
+        value: processValue
+    });
 
     createGUI();
     createScene();
@@ -89,6 +93,7 @@ function createLight() {
 
 
 function createModels() {
+
     var jsonLoader = new THREE.JSONLoader();
     jsonLoader.load('model/bone.json', addModel);
     function addModel(geometry) {
@@ -102,6 +107,8 @@ function createModels() {
 
 
         scene.add(boneMesh);
+
+        processGO();
        // helpset = new THREE.SkeletonHelper(boneMesh);
 
         //scene.add(helpset);
@@ -112,6 +119,8 @@ function createModels() {
         var mtl = new THREE.MeshFaceMaterial (material);
         var mesh = new THREE.Mesh(geometry, mtl);
         scene.add(mesh);
+
+        processGO();
 
 
 
@@ -124,7 +133,7 @@ function createModels() {
         var mesh = new THREE.Mesh(geometry, mtl);
         scene.add(mesh);
 
-
+        processGO();
 
     }
 
@@ -136,6 +145,7 @@ function createModels() {
 
         boneMesh.skeleton.bones[0].add(mesh);
         //boneMesh.skeleton.bones[0].rotation.y = Math.PI/2;
+        processGO();
     }
 
     jsonLoader.load('model/lowArm.json', addLowArm);
@@ -151,7 +161,7 @@ function createModels() {
             mesh.position.z -= boneMesh.skeleton.bones[i].position.z;
         }
 
-
+        processGO();
 
     }
 
@@ -171,7 +181,7 @@ function createModels() {
         //boneMesh.skeleton.bones[2].rotation.x = 1;
 
 
-
+        processGO();
 
 
     }
@@ -188,7 +198,7 @@ function createModels() {
             mesh.position.y -= boneMesh.skeleton.bones[i].position.y;
             mesh.position.z -= boneMesh.skeleton.bones[i].position.z;
         }
-
+        processGO();
 
     }
 
@@ -207,7 +217,7 @@ function createModels() {
                 mesh.position.z -= boneMesh.skeleton.bones[i].position.z;
             }
         }
-
+        processGO();
 
 
     }
@@ -224,15 +234,26 @@ function createModels() {
             mesh.position.z -= boneMesh.skeleton.bones[i].position.z;
         }
        // boneMesh.skeleton.bones[4].rotation.y += 1;
-
+        processGO();
 
     }
 
 
 }
+function processGO() {
+    processValue += 10;
+    $( "#progressbar" ).progressbar({
+        value: processValue
+    });
+}
 
 
 function loop() {
+    if(processValue ==100){
+        $('#cover').delay(500).fadeOut(1000);
+    }
+
+
     renderer.render(scene, camera);
     requestAnimationFrame(loop);
 
