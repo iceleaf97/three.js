@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20d511c-37e0-44c3-ac35-279f71b33288" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RobotArm/css/robotArm.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RobotArm/css/robotArm.css" afterPath="$PROJECT_DIR$/RobotArm/css/robotArm.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RobotArm/index_Arm.html" afterPath="$PROJECT_DIR$/RobotArm/index_Arm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RobotArm/js/arm.js" afterPath="$PROJECT_DIR$/RobotArm/js/arm.js" />
     </list>
     <ignored path="three.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,24 +30,24 @@
       <file leaf-file-name="index_Arm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobotArm/index_Arm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+            <state relative-caret-position="57">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="robotArm.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="robotArm.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobotArm/css/robotArm.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state relative-caret-position="95">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arm.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="arm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobotArm/js/arm.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -84,9 +83,9 @@
         <option value="$PROJECT_DIR$/BakingMtl/js/Baking.js" />
         <option value="$PROJECT_DIR$/bone/js/main.js" />
         <option value="$PROJECT_DIR$/RobotArm/model/bone.json" />
+        <option value="$PROJECT_DIR$/RobotArm/js/arm.js" />
         <option value="$PROJECT_DIR$/RobotArm/index_Arm.html" />
         <option value="$PROJECT_DIR$/RobotArm/css/robotArm.css" />
-        <option value="$PROJECT_DIR$/RobotArm/js/arm.js" />
       </list>
     </option>
   </component>
@@ -238,15 +237,15 @@
       <workItem from="1472636885509" duration="4414000" />
       <workItem from="1472650950756" duration="2753000" />
       <workItem from="1472831464954" duration="13134000" />
-      <workItem from="1472885810915" duration="2707000" />
+      <workItem from="1472885810915" duration="5131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36011000" />
+    <option name="totallyTimeSpent" value="38435000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="527" extended-state="0" />
+    <frame x="953" y="0" width="974" height="527" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19519833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -463,22 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RobotArm/index_Arm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RobotArm/css/robotArm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RobotArm/js/arm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -486,6 +469,22 @@
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RobotArm/index_Arm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RobotArm/css/robotArm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -4,6 +4,25 @@
     height: 100%;
 }
 
+#context {
+    position: absolute;
+    font-size: 18px;
+    font-family: "Century Gothic";
+    color: #888;
+    line-height: 30px;
+    text-align:left;
+    left:60px;
+    bottom: 10%;
+}
+#context a:link {
+    text-decoration:none;
+    color: #ff9e55;
+    font-size: 20px;
+}
+#context a:visited {
+    color: #ff9e55;
+}
+
 #progressbar {
     position: absolute;
     width: 200px;
