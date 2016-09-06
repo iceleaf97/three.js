@@ -23,15 +23,19 @@ function init() {
 }
 
 function createLabel() {
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
+    var canvas = document.createElement( 'canvas' );
+    canvas.width = 8;
+    canvas.height = 8;
 
-    var grd = ctx.createLinearGradient(0, 0, 170, 0);
-    grd.addColorStop(0, "black");
-    grd.addColorStop(1, "white");
+    var context = canvas.getContext( '2d' );
+    var gradient = context.createRadialGradient( canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2 );
+    gradient.addColorStop( 0, 'rgba(255,255,255,1)' );
+    gradient.addColorStop( 0.2, 'rgba(0,255,255,1)' );
+    gradient.addColorStop( 0.4, 'rgba(0,0,64,1)' );
+    gradient.addColorStop( 1, 'rgba(0,0,0,1)' );
 
-    ctx.fillStyle = grd;
-    ctx.fillRect(20, 20, 150, 100);
+    context.fillStyle = gradient;
+    context.fillRect( 0, 0, canvas.width, canvas.height );
 
 
     var texture = new THREE.Texture(canvas);
