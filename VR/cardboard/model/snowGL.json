@@ -4,7 +4,7 @@
     "materials":[{
         "visible":true,
         "transparent":false,
-        "colorDiffuse":[0.5, 0.5, 0.5],
+        "colorDiffuse":[0.85, 0.85, 0.85],
         "colorSpecular":[0.5,0.5,0.5],
         "depthTest":true,
         "opacity":1,
@@ -12,7 +12,8 @@
         "colorEmissive":[0,0,0],
         "mapDiffuseWrap":["RepeatWrapping","RepeatWrapping"],
         "mapDiffuse":"snowGL.png",
-        "DbgName":"Material.007",
+        "mapLight":"snowGL.png",
+        "DbgName":"Material.006",
         "depthWrite":true,
         "mapDiffuseRepeat":[1,1],
         "shading":"phong",

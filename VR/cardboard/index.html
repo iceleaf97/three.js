@@ -21,7 +21,7 @@
   <body>
     <div id="example"></div>
 
-  <script src="js/third-party/threejs/three.js"></script>
+  <script src="js/third-party/threejs/three.min.js"></script>
   <script src="js/third-party/threejs/StereoEffect.js"></script>
   <script src="js/third-party/threejs/DeviceOrientationControls.js"></script>
   <script src="js/third-party/threejs/OrbitControls.js"></script>
@@ -46,18 +46,18 @@
       effect = new THREE.StereoEffect(renderer);
 
       scene = new THREE.Scene();
-      scene.fog = new THREE.Fog(0xffffff, 1 , 80)
+      //scene.fog = new THREE.Fog(0x637490, 1 , 900);
 
       camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
-      camera.position.set(0, 12, 20);
+      camera.position.set(0, 12, -20);
       scene.add(camera);
 
       controls = new THREE.OrbitControls(camera, element);
       controls.rotateUp(Math.PI / 4);
       controls.target.set(
-        camera.position.x + 0.1,
-        camera.position.y+0.1,
-        camera.position.z
+        camera.position.x ,
+        camera.position.y + 0.1,
+        camera.position.z + 0.1
       );
       controls.noZoom = true;
       controls.noPan = true;
@@ -79,15 +79,29 @@
 
 
 
-      var ambient = new THREE.AmbientLight(0xffffff, 0.7);
+      var ambient = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambient);
 
-      var directLt = new THREE.DirectionalLight(0xffffff, 0.1);
-      directLt.position.set(0,100, 100);
-      scene.add(directLt);
+
+      var geometry2 = new THREE.SphereGeometry( 500, 60, 40 );
+
+
+      var material2 = new THREE.MeshBasicMaterial( {
+        map: new THREE.TextureLoader().load( 'textures/hdri/Sky 13.png' )
+      } );
+
+      var mesh2 = new THREE.Mesh( geometry2, material2 );
+      mesh2.scale.set( - 1, 1, 1 );
+      mesh2.rotation.y = Math.PI / 5;
+
+      scene.add( mesh2 );
+      console.log(mesh2);
+
+
+
 
       var texture = THREE.ImageUtils.loadTexture(
-        'textures/patterns/tile.jpg'
+        'textures/patterns/Snow.jpg'
       );
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
@@ -97,7 +111,7 @@
       var material = new THREE.MeshPhongMaterial({
         color: 0xffffff,
         specular: 0xffffff,
-        shininess: 20,
+        shininess: 1,
         shading: THREE.FlatShading,
         map: texture,
         bumpMap: texture,
@@ -111,23 +125,26 @@
       scene.add(mesh);
 
       var jsonLoader = new THREE.JSONLoader();
+      jsonLoader.load('model/fox.json',addFox);
+      function addFox(geometry, material) {
+        var mtl = new THREE.MeshFaceMaterial(material);
+        var Fox = new THREE.Mesh(geometry, mtl);
+        Fox.position.set(0, 10, 0);
+        Fox.rotation.y = Math.PI;
+        scene.add(Fox);
+      }
+
+
       jsonLoader.load('model/snowGL.json',addSnowGL);
       function addSnowGL(geometry, material) {
         var mtl = new THREE.MeshFaceMaterial(material);
         var snowGL = new THREE.Mesh(geometry, mtl);
-        snowGL.position.set(0, 10, 40);
+        snowGL.position.set(0, 10, 0);
         snowGL.rotation.y = Math.PI;
         scene.add(snowGL);
       }
 
-      jsonLoader.load('model/Fox.json',addFox);
-      function addFox(geometry, material) {
-        var mtl = new THREE.MeshFaceMaterial(material);
-        var Fox = new THREE.Mesh(geometry, mtl);
-        Fox.position.set(0, 10, 40);
-        Fox.rotation.y = Math.PI;
-        scene.add(Fox);
-      }
+
 
 
       window.addEventListener('resize', resize, false);

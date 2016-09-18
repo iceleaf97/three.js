@@ -112,7 +112,16 @@ function createModels() {
        // helpset = new THREE.SkeletonHelper(boneMesh);
 
         //scene.add(helpset);
+        loadJson();
     }
+
+
+
+}
+
+function loadJson() {
+
+    var jsonLoader = new THREE.JSONLoader();
 
     jsonLoader.load('model/floor.json', addFloor);
     function addFloor(geometry, material) {
@@ -233,13 +242,13 @@ function createModels() {
             mesh.position.y -= boneMesh.skeleton.bones[i].position.y;
             mesh.position.z -= boneMesh.skeleton.bones[i].position.z;
         }
-       // boneMesh.skeleton.bones[4].rotation.y += 1;
+        // boneMesh.skeleton.bones[4].rotation.y += 1;
         processGO();
 
     }
-
-
 }
+
+
 function processGO() {
     processValue += 10;
     $( "#progressbar" ).progressbar({

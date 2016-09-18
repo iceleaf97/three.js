@@ -39,6 +39,7 @@
     height: 100%;
     background-color: #eee;
     z-index: 2;
+    opacity: 1;
 }
 
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
